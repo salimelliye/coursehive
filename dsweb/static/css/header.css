@@ -1,0 +1,138 @@
+
+@font-face {
+
+    font-family: 'Mont-semBold' ;
+    src: url(fonts/FontsFree-Net-Montserrat-SemiBold.ttf);
+  }
+  
+  
+  @font-face {
+  
+    font-family: 'Mont-Reg' ;
+    src: url(fonts/static/Montserrat-Regular.ttf);
+  }
+  
+  
+  @font-face {
+  
+    font-family: 'Mont-med' ;
+    src: url(fonts/static/Montserrat-Medium.ttf);
+  }
+
+  
+
+.logo-image {
+
+height: 50px;
+
+margin-left: 8%;
+
+margin-top: 10px;
+}
+
+
+
+.bar {
+
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 5px;
+    z-index: 2;
+   
+}
+
+
+
+.list {
+
+    width: 87%;
+    display: flex;
+    background-color: #F0F0F0;
+    border-radius: 6rem;
+    box-shadow: 0px 0px 5px rgb(163, 160, 156, 0.5);
+    padding-left:0;   
+    
+}
+
+
+
+.navlinks {
+
+flex: 1;
+
+list-style:none;
+
+text-align: center;
+
+font-size: 1.5vw;
+
+padding: 0.371vw;
+
+line-height: 1.5;
+
+color: #006e58;
+
+font-family:'Mont-med';
+
+/* font-weight: bold; */
+}
+
+
+
+.navlinks:link, .navlinks:visited, .navlinks:focus{
+
+    text-decoration: none;
+    color: #006e58;
+}
+ 
+
+
+.navlinks:hover {
+
+    color: #8FB9B2;      
+    background-color: #D5DBDA;
+    border-radius: 6rem;
+}
+
+
+
+.navlinks:active{
+    font-weight: bolder;
+}
+
+
+
+.header {
+
+    height: 30px;
+    font-size: 40 px ;
+	width: 100%;
+	position: relative;
+}
+
+
+
+footer {
+
+    font-family: 'Mont';
+    text-align: center;
+    font-size: 1rem;
+    padding: 1em 0;
+    background-color: #D9D9D9;
+    color: #A3A09C;
+    margin-top: 20px;
+    display: block;
+}
+@media (max-width:500px){
+
+    .logo-image {
+
+        height: 30px;
+        
+        margin-left: 8%;
+        
+        margin-top: 10px;
+        }
+
+}

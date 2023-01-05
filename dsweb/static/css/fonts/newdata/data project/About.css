@@ -1,0 +1,93 @@
+.aboutFM{
+	/* border-radius: 5%; */
+	display: flex;
+	flex-direction:row;
+	height: 350px;
+	background-color: #006e58;
+}
+
+
+
+
+
+section .aboutFM .leftA .photo img {
+	border-radius: 50%;
+	margin-left: auto;
+	padding: 20px;
+	padding: 30x;
+	/* margin-left: unset; */
+	padding-right: 40px;
+	/* padding: 25px; */
+	padding: 20 px;
+	/* align-items: flex-end; */
+	border: 10 px solid rgba(245,245,165,0.8);
+
+
+}
+
+.sizeM{
+	flex:0.3;
+}
+
+
+.leftA{
+display: flex;
+flex-direction:column;
+background-color: #006e58;
+
+flex: 1;
+
+}
+.photo{
+	padding-right: 10px;
+	align-items: center;
+	flex: 2;
+}
+.icons{
+	flex: 1;
+}
+.name{
+	font-size: x-large;
+	flex: 1.5;
+	font-size: 2 px;
+	color: #f7f7f7;
+}
+.position{
+	font-size: x-large;
+	flex: 2;
+	color: rgb(255 255 255 / 80%);
+}
+.contact{
+	color:   rgba(245,245,165,0.8);
+	flex: 2;
+}
+
+
+
+
+
+
+
+.textH{
+	margin-left: 50px;
+	/* align-items: center; */
+	flex-direction:column;
+	display: flex;
+	flex: 2;
+	background-color:#006e58;
+}
+
+
+#About{
+	border-radius: 20%;
+	height: fit-content;
+	margin-top: 25px;
+	margin: 30px;
+	}
+.navH{
+
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+
+}

@@ -1,0 +1,341 @@
+.carousel {
+    position: relative;
+   
+    
+  }
+  
+  .carousel__item {
+    height: fit-content;
+    background: #006e58;
+    /* padding: 1em; */
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    color: #ffffff;
+    display: none;
+  }
+
+  .carsl {
+    height: fit-content;
+    background: #006e58;
+    /* padding: 1em; */
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    color: #ffffff;
+    display: none;
+  }
+  .carousel__item--selected {
+    display: block;
+  }
+.carsl--selected {
+    display: block;
+  }
+  
+
+
+  
+  .carousel__nav {
+    width: 100%;
+    padding: 20px 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+  }
+  
+  .carousel__button {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .carousel__button--selected {
+    background: rgba(255, 255, 255, 0.5);
+  }
+  #lectFlex{
+    background-color: #006e58;
+    display:flex;
+    height:200px;
+    flex-direction: row;
+    
+    }
+    #lecleft{
+        
+        color:#fffad2;
+    }
+    
+    
+    #pptsC{
+      
+font-size: 35px;
+      
+color: #fff;
+    }
+
+
+
+    
+    #notesC{
+       
+font-size: 35px;
+       
+color: #fff;
+    }
+    
+    #filesC{
+        
+font-size: 35px;
+        
+color: #fff;
+    }
+
+    .examsCont{
+        height: 200px;
+        display:flex;
+        flex-direction: row;
+        font-size: larger;
+    }
+    .sectionsC{
+
+line-height: 3;
+
+font-size: 20px;
+
+/* padding-top: 60px; */
+
+flex:1;
+
+justify-content: center;
+
+margin-left: 10%;
+
+align-items: center;
+}
+
+.carsl{
+
+  background-color: #006e58;
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  column-gap: 7%;
+  align-items: center;
+  }
+  
+  .carsl .title{
+    color: #fff;
+    flex:0.5;
+    font-family: 'Mont';
+    padding-left: 10%;
+  
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+    .title h2{
+      font-size: 2vw;
+    }
+  
+    .title #Tree{
+  
+font-family: 'Mont-med';
+  
+font-size: 1.5vw;
+  
+}
+  
+  
+  .line{
+    height: 135px;
+    width: 2px;
+    background-color: #fff;
+  }
+  
+  .crslItem #info{
+    flex:2;
+    color: #fff;
+    font-size: larger;
+    font-family: 'Mont-med';
+  
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  
+  
+   .infoLinx:link, .infoLinx:visited{
+    text-decoration: underline;
+    color:#fff;
+    font-size: 1.5vw;
+    font-family: 'Mont-med';
+  }
+  
+  .infoLinx:hover{
+  
+  color:#8FB9B2;
+  }
+  
+  .infoLinx:active{
+    font-weight: bolder;
+  }
+
+  .slider-container {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    cursor: grab;
+  }
+  .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: 70%;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr); /*we have 10 imgs so repeat 10 times 1 fr*/
+    column-gap: 2rem;
+    pointer-events: none;
+  }
+  .slider-item {
+    width: 300px;
+    height: 100%;
+  
+  color:#9ca09e
+  
+  }
+  .slider-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    user-select: none;
+  
+  
+  
+  
+  }
+  .slider-container{
+  font-size: 2vw;
+  font-family:'Mont-med';
+  font-weight: 800;
+  
+    background :linear-gradient( to top ,#fff 40% ,#006e58 40% )
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:500px) {
+
+  .carsl {
+    height: fit-content;
+    background: #006e58;
+    /* padding: 1em; */
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    color: #ffffff;
+    display: none;
+  }
+  .carousel__item--selected {
+    display: block;
+  }
+.carsl--selected {
+    display: block;
+  }
+
+  .carsl{
+
+background-color: #006e58;
+
+padding: 2px;
+
+display: flex;
+
+flex-direction: row;
+
+column-gap: 7%;
+
+align-items: center;
+
+}
+.line{height:90px;}
+
+#notesC{font-size:9px;}
+.infoLinx{
+  font-size: 9px!important;
+}
+.title #Tree{
+  font-size: 9px;
+}
+    .title h2{
+      font-size:12px;
+    }
+    
+    .carsl .title{
+      color: #fff;
+      flex:0.5;
+      font-family: 'Mont';
+      padding-left: 10%;
+      display: flex;
+      flex-direction: column;
+      row-gap: 10px;
+      justify-content: center;
+      align-items: center;
+    }
+    .slider-container{
+      height: 150px;
+      top: 100%;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .carousel__item  {
+    height:150px;
+  }
+  .pic22{
+    width: 130px;
+    height: 80px;
+  }
+  .examsCont{
+    height:150px;
+  }
+  
+
+}

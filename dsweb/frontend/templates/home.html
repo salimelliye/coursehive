@@ -1,0 +1,292 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>COURSEHIVE</title>
+    <link rel="stylesheet" type="text/css" href='{% static "css/header.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "css/general.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "css/home.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "css/about.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "css/material.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "css/material2.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "css/join.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "css/schedule.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "css/carousel.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "css/icons.css" %}'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Libre+Baskerville&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <a target="_blank" href="https://www.lau.edu.lb/">
+          <img src='{% static "images/LAU-logo.png" %}'  alt="LAU logo" class="logo-image">
+        </a>
+      </div>
+      <div class="time"></div>
+      <nav class="bar">
+        <ul class="list">
+          <a class="navlinks" href="#home" target=""> Home </a>
+          <a class="navlinks" href="{{ section.Syllabus.url }}" target="_blank"> Syllabus </a>
+          <a class="navlinks" href="#About" target=""> Instructor </a>
+          <a class="navlinks" href="#Material" target=""> Material </a>
+          <a class="navlinks" href="#schedule" target=""> Schedule </a>
+          <a class="navlinks" href="#join" target=""> Join </a>
+        </ul>
+      </nav>
+    </header>
+    <div id="home">
+      <div class="e0"></div>
+      <div class="homeF">
+        <div class="e1"></div>
+        <strong class="e2">
+          <br>{{section.CRN}}:<br>{{course.Title}} </strong>
+        <div class="e3"></div>
+      </div>
+      <div class="homeF2">
+        <div class="e4"></div>
+        <div class="e5">LAU Fall 2022</div>
+        <div class="e6"></div>
+      </div>
+    </div>
+    <section id="About">
+      <div class="AboutTitle"> Instructor </div>
+      <div class=aboutFM>
+        <div class="sizeM"></div>
+        <div class="leftA">
+          <div class="photo">
+            <img class="pic"  src='{{ section.Instructor.Image.url }}' width="180">
+          </div>
+          <div class="icons">
+            <div class="wrapperI">
+              <div class="icon twitter">
+                <a href='{{section.Instructor.TwitterURL}}'target="_blank">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </div>
+              <div class="icon linkedin">
+                <a href='{{section.Instructor.LinkdinURL}}' target="_blank">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+              </div>
+              <div class="icon github">
+                <a href=" http://github.com/wissamfawaz/" target="_blank">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="textH">
+          <strong class="name" style="font-size:30 px ;">{{section.Instructor.Fullname}}</strong>
+          <div class="position">{{section.Instructor.Description}}</div>
+          <div class="contact" >{{section.Instructor.Email}} </div>
+          <small class="links" style="align-items:center ;">
+            <a class="bio" href="https://wissamfawaz.com/" target="_blank">Biography</a>
+            <span class="break">|</span>
+            <a class="bio" href="https://wissamfawaz.com/publication.htm" target="_blank">Publications</a>
+            <span class="break">|</span>
+            <a class="bio" href="https://wissamfawaz.com/CV.pdf" target="_blank">CV</a>
+          </small>
+        </div>
+      </div>
+    </section>
+    <div id="Material">
+      <div class="wrapper">
+        <div class="MaterialTitle">Material</div>
+        <div class="radio_tabs">
+          <input type="radio" name="education" class="input" id="one"  >
+          <label for="one" class="radio_wrap" data-radio="radio_1" checked>
+            <span class="radio_mark"> Recordings </span>
+          </label>
+         
+          <input type="radio" name="education" class="input" id="three">
+          <label for="three" class="radio_wrap" data-radio="radio_3">
+            <span class="radio_mark"> Files </span>
+          </label>
+        </div>
+        <div class="content">
+
+          <div class="radio_content radio_1" >
+            <div class="slider-container">
+              <div class="slider" style="margin-left:20px;">
+                {% for lec in section.lecture_set.all %}
+                <div class="slider-item">
+                  
+                  <span id="number12" style="color:white; font-size: 40px;">{{lec.id}}</span>
+                  <div style="background-color:#8FB9B2; width:300px; height:200px; border: 5px solid #DDDFDF ">
+                  <a href="{{lec.material.Video.url}}">
+                    <p style="text-align: center; color:white; font-size: 30px; padding-top:55px;">{{lec.Title}}</p>
+                  </a> 
+                </div>
+                </div>
+                {% endfor %}
+              </div>
+              
+            </div>
+
+          </div>
+
+
+
+          <div class="radio_content radio_3">
+            <div class="examsCont">
+              <div class="sectionsC">
+                <a href="testl" target="" style=" color:#fff">Midterm fall 2016</a>
+                <br>
+                <a href="testl" target="" style="color:#fff">Midterm fall 2017</a>
+                <br>
+                <a href="testl" target="" style="color:#fff">Midterm fall 2018</a>
+                <br>
+              </div>
+           
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div id="schedule">
+      <div class="ScheduleTitle">Schedule</div>
+      <div class="ribbon"></div>
+      <div class="calendar" id="calendar-app">
+        <div class="calendar--day-view" id="day-view">
+          <span class="day-view-exit" id="day-view-exit">&times;</span>
+          <span class="day-view-date" id="day-view-date">MAY 29 2016</span>
+          <div class="day-view-content">
+            <div class="day-highlight"> You <span class="day-events" id="day-events">had no events for today</span>. &nbsp; <span tabindex="0" onkeyup="if(event.keyCode != 13) return; this.click();" class="day-events-link" id="add-event" data-date>Add a new event?</span>
+            </div>
+            <div class="day-add-event" id="add-day-event-box" data-active="false">
+              <div class="row">
+                <div class="half">
+                  <label class="add-event-label"> Name of event <input type="text" class="add-event-edit add-event-edit--long" placeholder="New event" id="input-add-event-name">
+                  </label>
+                </div>
+                <div class="qtr">
+                  <label class="add-event-label"> Start Time <input type="text" class="add-event-edit" placeholder="8:15" id="input-add-event-start-time" data-options="1,2,3,4,5,6,7,8,9,10,11,12" data-format="datetime">
+                    <input type="text" class="add-event-edit" placeholder="am" id="input-add-event-start-ampm" data-options="a,p,am,pm">
+                  </label>
+                </div>
+                <div class="qtr">
+                  <label class="add-event-label"> End Time <input type="text" class="add-event-edit" placeholder="9" id="input-add-event-end-time" data-options="1,2,3,4,5,6,7,8,9,10,11,12" data-format="datetime">
+                    <input type="text" class="add-event-edit" placeholder="am" id="input-add-event-end-ampm" data-options="a,p,am,pm">
+                  </label>
+                </div>
+                <div class="half">
+                  <a onkeyup="if(event.keyCode != 13) return; this.click();" tabindex="0" id="add-event-save" class="event-btn--save event-btn">save</a>
+                  <a tabindex="0" id="add-event-cancel" class="event-btn--cancel event-btn">cancel</a>
+                </div>
+              </div>
+            </div>
+            <div id="day-events-list" class="day-events-list"></div>
+            <div class="day-inspiration-quote" id="inspirational-quote"> Every child is an artist. The problem is how to remain an artist once he grows up. –Pablo Picasso </div>
+          </div>
+        </div>
+        <div class="calendar--view" id="calendar-view">
+          <div class="cview__month">
+            <span class="cview__month-last" id="calendar-month-last">Apr</span>
+            <span class="cview__month-current" id="calendar-month">May</span>
+            <span class="cview__month-next" id="calendar-month-next">Jun</span>
+          </div>
+          <div class="cview__header">Sun</div>
+          <div class="cview__header">Mon</div>
+          <div class="cview__header">Tue</div>
+          <div class="cview__header">Wed</div>
+          <div class="cview__header">Thu</div>
+          <div class="cview__header">Fri</div>
+          <div class="cview__header">Sat</div>
+          <div class="calendar--view" id="dates"></div>
+        </div>
+        <div class="footer">
+          <span>
+            <span id="footer-date" class="footer__link">Today is May 30</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div id="join">
+      <div class="form" style="padding-bottom:140px;">
+        <div class="login-box">
+          <h1 class="h2f">Join</h1>
+          <h2> WHATSAPP GROUP</h2>
+          <form method="POST" action="" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="firstLine">
+            <div class="user-box">
+              <input type="text" name="Name" required="">
+                <label>First Name</label>
+            </div>
+         
+            <div class="user-box">
+              <input type="text" name="LastName" required="">
+                <label>Last Name</label>
+            </div>
+            </div>
+    
+            <div class="user-box">
+              <input type="text" name="IDNumber" required="">
+                <label>ID Number</label>
+            </div>
+        
+
+            <div class="user-box">
+              <input type="text" name="Email" required="" >
+                <label>Email</label>
+            </div>
+                    
+                    
+            <div class="submit">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <input type="submit" value="Submit" class="button">
+            </div>
+                      
+          </form>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+      <div class="info">
+        <div class="question">How to get the link?</div>
+        <div class="step1">
+          <span class="item1" class="items">1</span>
+          <span class="item2" class="items">
+            <br>Kindly fill out the form <span>
+        </div>
+        <div class="step2">
+          <span class="item1">2</span>
+          <div class="item2">
+            <span>The WhatsApp group link will</span>
+            <br>
+            <span>be sent to you via email </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <strong>Copyright ©2022</strong>
+    </footer>
+    <script src="https://kit.fontawesome.com/dd8c49730d.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src='{% static "js/script3.js" %}'></script>
+    <script type="text/javascript" src='{% static "js/script2.js" %}'></script>
+    <script type="text/javascript" src='{% static "js/script.js" %}'></script>
+  </body>
+</html>

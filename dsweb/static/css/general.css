@@ -1,0 +1,32 @@
+
+
+
+
+
+@font-face {
+
+   font-family: 'Mont' ;
+   src: url(fonts/FontsFree-Net-Montserrat-SemiBold.ttf);
+ }
+
+
+*{
+   font-size: 1.5vw;
+   font-family: 'Mont', serif;
+   margin-left:0;
+   margin-right: 0;
+}
+
+@media (max-width:500px) {
+.pic22{
+   width:120px;
+   height:50px;
+}
+img{
+   width:90px;
+   height:110px;
+}
+
+
+   
+}
