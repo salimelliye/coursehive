@@ -1,17 +1,8 @@
-body{
-    
-/* margin: 0; */
-    
-padding: 0;
-margin-bottom: 0;
-    
-font-family: 'HelveticaNeue-Light', Helvetica Neue, Helvetica;
-}
 
 
 #schedule{
-    margin: 30px auto;
-    padding-top: 140px;
+    margin: 0px ;
+    padding-top: 100px;
     /* background-color:#006e58; */
     position: relative;
     
@@ -20,7 +11,7 @@ font-family: 'HelveticaNeue-Light', Helvetica Neue, Helvetica;
 
 .ribbon{
   background-color: #006e58;
-  height: 250px;
+  height: 20vh;
   width: 100%;
   margin:0;
   z-index: -1;
@@ -57,7 +48,7 @@ width: 95%;
     
 max-width: 900px;
     
-height: 300px;
+
     
 box-shadow: 0px 0px 5px rgb(163, 160, 156, 0.5);
     
@@ -457,8 +448,8 @@ position: relative;
       font-size:15px;
     }
     .calendar{
-      height: 150px;
-      width: 70%;
+      
+      width: 90%;
     }
 
     .cview--spacer, .cview__header, .cview--date{
