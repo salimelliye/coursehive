@@ -595,23 +595,44 @@ footer {
 }
 
 .btn--primary2 {
-    background: #006e58;
-    color: white;;
-    border-radius: 0;
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    display: inline-block;
-    text-decoration: none;
-    transition: all .45s ease-in-out;
-    text-transform: capitalize;
-    font-family: var(--font-exo);
-    cursor: pointer;
-    overflow: hidden;
-    overflow: hidden;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
+  background: #006e58;
+  color: white;;
+  border-radius: 0;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  transition: all .45s ease-in-out;
+  text-transform: capitalize;
+  font-family: var(--font-exo);
+  cursor: pointer;
+  overflow: hidden;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
+.biographysection{
+  top: -35px;
+  position: relative
+}
+
+.biographybox{
+  background-color:#ffffff;
+  box-shadow: 0 30px 50px 0 rgb(1 1 1 / 15%);
+}
+
+.biographytitle {
+  color:#006e58; 
+  padding-left:35px;
+}
+
+.biographyinfo{
+  padding-left:35px;
+  padding-right:35px;
+  line-height: 1.8; 
+  letter-spacing: 0.3px;
+  padding-bottom:30px;
+}

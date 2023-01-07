@@ -22,6 +22,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('test/', views.test),
     path('<str:course_Code>/<str:section_CRN>/', views.home, name='home'),
 
     

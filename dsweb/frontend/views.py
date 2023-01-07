@@ -26,6 +26,13 @@ def home(request, course_Code, section_CRN):
     
     return render(request, 'home.html', context)
 
+
+def test(request, *args, **kwargs):
+  context = {
+
+  }
+  return render(request, 'instructor.html', context)
+
   
 
 
