@@ -329,7 +329,7 @@ h2 {
   }
   
   #slider-container #slider .slide {
-    height: 90%;
+    height: 100%;
     margin: auto 10px;
     background-color: #8FB9B2;
     box-shadow: 2px 2px 4px 2px white, -2px -2px 4px 2px white;
@@ -614,6 +614,77 @@ footer {
   padding-right: 20px;
 }
 
+.positiontitle{
+  font-size: 12px;
+  margin-bottom: 20px;
+  color: #8FB9B2;
+  display: inline-block;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  line-height: 10px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 991px){
+  .positiontitle {
+  text-align: center;
+  padding-top: 10px;
+  font-size:15px;
+  }
+}
+
+.mainphoto {
+  height:300px;
+  width:300px; 
+  border: 5px solid #8FB9B2; 
+  border-radius: 50%;
+}
+
+@media (max-width: 991px){
+  .mainphoto {
+  height:150px;
+  width:150px; 
+  }
+}
+
+.bannertitleinfo{
+  color:#8FB9B2;
+}
+
+@media (max-width: 991px){
+  .bannertitleinfo {
+  text-align:center;
+  padding-top:8px;
+  }
+}
+
+.bannerprinfo{
+  color: white; 
+  letter-spacing: 2px; 
+  font-size: 18px;
+}
+
+@media (max-width: 991px){
+  .bannerprinfo {
+  text-align:center;
+  }
+}
+
+
+@media (max-width: 991px){
+  .instructorname {
+  text-align:center;
+  }
+}
+
+@media (max-width: 991px){
+  .responsive {
+  padding-top:20px;
+  }
+}
+
 .biographysection{
   top: -35px;
   position: relative
@@ -636,3 +707,6 @@ footer {
   letter-spacing: 0.3px;
   padding-bottom:30px;
 }
+
+
+
