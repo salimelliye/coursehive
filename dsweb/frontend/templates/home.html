@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+
     <meta charset="utf-8">
     <title>COURSEHIVE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +11,11 @@
     <link rel="stylesheet" type="text/css" href='{% static "css/bootstrap-grid.min.css" %}'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
+  
+</head>
+
   <body>
+
     <nav>
       <input type="checkbox" id="check">
       <label for="check" class="checkbtn">
@@ -25,49 +29,47 @@
           <a class="active" href="#">Home</a>
         </li>
         <li>
-          <a href="#">Syllabus</a>
+          <a href="#">Publications</a>
         </li>
         <li>
-          <a href="#">Instructor</a>
+          <a href="#">Courses</a>
         </li>
         <li>
-          <a href="#">Material</a>
-        </li>
-        <li>
-          <a href="#">Join</a>
+          <a href="#">Cv</a>
         </li>
       </ul>
     </nav>
-    <section id="subheader" class="jarallax text-white" style="z-index: 0; background-size: cover; background-color: #006e58; height: 270px;">
-      <div class="center-y relative text-center" style="background-size: cover;">
-        <div class="container" style="background-size: cover;">
-          <div class="row" style="background-size: cover;">
-            <div class="col text-center" style="background-size: cover;">
-              <div class="spacer-single" style="background-size: cover;"></div>
-              <h1>Data Structures</h1>
-              <p style="font-size:25px; color:white;">SECTION'S CRN : 3948</p>
-            </div>
-            <div class="clearfix" style="background-size: cover;"></div>
-          </div>
-        </div>
-      </div>
-      <div id="jarallax-container-0" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; z-index: -100; clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%); background-size: cover;"></div>
-    </section>
-    <section id="section-text" data-bgcolor="#F0F0F0;" class="text-light" style="background-color: #F0F0F0; background-size: cover; padding: 90px 0 90px 0; position: relative;">
+
+
+    <section id="section-text" data-bgcolor="#F0F0F0;" class="text-light" style="background-color: #006e58; background-size: cover; padding: 90px 0 90px 0; position: relative;">
       <div class="container" style="background-size: cover;">
         <div class="row align-items-center" style="background-size: cover;">
           <div class="col-lg-4 col-md-12 wow fadeInRight animated" data-wow-delay=".2s" style="background-size: cover; visibility: visible; animation-delay: 0.2s; animation-name: fadeInRight;">
-            <div class="de_count ultra-big s2 text-center" style="background-size: cover;">
-              <img src='{% static "images/faculty-wissam-fawwaz.jpg" %}' style="height:300px;width:300px; border: 5px solid #8FB9B2; border-radius: 50%;">
+            <div class=" text-center" style="background-size: cover;">
+              <img class="mainphoto" src='{% static "images/faculty-wissam-fawwaz.jpg" %}'>
             </div>
           </div>
-          <div class="col-lg-4 p-lg-5  mb-sm-30 wow fadeInRight animated" data-wow-delay=".4s" style="background-size: cover; visibility: visible; animation-delay: 0.4s; animation-name: fadeInRight;">
-            <span class="p-title">INSTRUCTOR</span>
+          <div class="col-lg-4 p-lg-5  mb-sm-30 wow fadeInRight animated instructorname" data-wow-delay=".4s" style="background-size: cover; visibility: visible; animation-delay: 0.4s; animation-name: fadeInRight;">
+            <span class="positiontitle">Full Professor of Computer Engineering</span>
             <br>
-            <h2>DR. WISSAM FAWAZ</h2>
+            <h2 style="color:white;">DR. <br> WISSAM FAWAZ </h2>
+            <br>
+            <div >
+              <i class="fa fa-twitter" style="font-size:24px; color: #8FB9B2; "></i>
+              <i class="fa fa-linkedin" style="font-size:24px; color:#8FB9B2; padding-left:10px;"></i>
+              <i class="fa fa-github" style="font-size:24px; color:#8FB9B2; padding-left:10px;"></i>
+            </div>
           </div>
-          <div class="col-lg-4 wow fadeInRight animated" data-wow-delay=".6s" style="background-size: cover; visibility: visible; animation-delay: 0.6s; animation-name: fadeInRight;">
-            <p style="font-size:20px;"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+          
+          <div class="col-lg-4 wow fadeInRight animated responsive" data-wow-delay=".6s" style="background-size: cover; visibility: visible; animation-delay: 0.6s; animation-name: fadeInRight;">
+            <h3 class="bannertitleinfo">Mail Address:</h3>
+            <p class="bannerprinfo"> Lebanese American University P.O. Box 36 / ECE Dept Byblos Lebanon.</p>
+            <h3 class="bannertitleinfo">Email: </h3>
+            <p class="bannerprinfo"> wissam.fawaz@lau.edu.lb</p>
+            <h3 class="bannertitleinfo">Tel: </h3>
+            <p class="bannerprinfo"> +961.9.547254 Ext: 2414</p>
+            <h3 class="bannertitleinfo">Fax: </h3>
+            <p class="bannerprinfo">+961.9.547256</p>
             <i class="fa fa-twitter" style="font-size:24px; color:#006e58; "></i>
             <i class="fa fa-linkedin" style="font-size:24px; color:#006e58; padding-left:10px;"></i>
             <i class="fa fa-globe" style="font-size:24px; color:#006e58; padding-left:10px;"></i>
@@ -75,352 +77,93 @@
         </div>
       </div>
     </section>
-    <div style="margin-left: 13%; top: -20px; font-size: 35px; color: #006e58; font-weight: Bold; position: relative; ">Lectures</div>
-    <div id="container">
-      <div id="slider-container">
-        <span onclick="slideRight()" class="btn"></span>
-        <div id="slider">
-          <div class="slide">
-            <span>1</span>
-          </div>
-          <div class="slide">
-            <span>2</span>
-          </div>
-          <div class="slide">
-            <span>3 <span>
-          </div>
-          <div class="slide">
-            <span>4</span>
-          </div>
-          <div class="slide">
-            <span>5</span>
-          </div>
-          <div class="slide">
-            <span>6</span>
-          </div>
-          <div class="slide">
-            <span>7</span>
-          </div>
-          <div class="slide">
-            <span>8</span>
-          </div>
-          <div class="slide">
-            <span>9</span>
-          </div>
-          <div class="slide">
-            <span>10</span>
-          </div>
-        </div>
-        <span onclick="slideLeft()" class="btn"></span>
-      </div>
-    </div>
-    <section style="background-size: cover; margin-top:190px; background-color: #8FB9B2;">
-      <div class="container" style="background-size: cover;">
-        <div class="row" style="background-size: cover;  padding-top:40px;  padding-bottom:40px;">
-          <div class="col-lg-4 col-md-6 mb30" style="background-size: cover;">
-            <div class="f-box f-icon-left f-icon-rounded" style="background-size: cover;">
-              <i class="icofont-group bg-color text-light"></i>
-              <div class="fb-text" style="background-size: cover;">
-                <h4>Lecture 1's Files</h4>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem. </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb30" style="background-size: cover;">
-            <div class="f-box f-icon-left f-icon-rounded" style="background-size: cover;">
-              <i class="icofont-medical-sign-alt bg-color text-light"></i>
-              <div class="fb-text" style="background-size: cover;">
-                <h4>Lecture 2's Files</h4>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem. </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb30" style="background-size: cover;">
-            <div class="f-box f-icon-left f-icon-rounded" style="background-size: cover;">
-              <i class="icofont-mining bg-color text-light"></i>
-              <div class="fb-text" style="background-size: cover;">
-                <h4>Lecture 3's Files</h4>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem. </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb30" style="background-size: cover;">
-            <div class="f-box f-icon-left f-icon-rounded" style="background-size: cover;">
-              <i class="icofont-law-order bg-color text-light"></i>
-              <div class="fb-text" style="background-size: cover;">
-                <h4>Lecture 4's Files</h4>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem. </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb30" style="background-size: cover;">
-            <div class="f-box f-icon-left f-icon-rounded" style="background-size: cover;">
-              <i class="icofont-group-students bg-color text-light"></i>
-              <div class="fb-text" style="background-size: cover;">
-                <h4>Lecture 5's Files</h4>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem. </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb30" style="background-size: cover;">
-            <div class="f-box f-icon-left f-icon-rounded" style="background-size: cover;">
-              <i class="icofont-money bg-color text-light"></i>
-              <div class="fb-text" style="background-size: cover;">
-                <h4>Lecture 6's Files</h4>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem. </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb30" style="background-size: cover;">
-            <div class="f-box f-icon-left f-icon-rounded" style="background-size: cover;">
-              <i class="icofont-building bg-color text-light"></i>
-              <div class="fb-text" style="background-size: cover;">
-                <h4>Lecture 7's Files</h4>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem. </p>
-              </div>
-            </div>
-          </div>
+
+    <section>
+      <div class="container biographysection" style="padding-left:15px;">
+        <div class="biographybox">
+          <h1 class="biographytitle">Biography</h1>
+          <p class="biographyinfo">Wissam Fawaz received a B.E. in computer engineering with high honors from the Lebanese University in 2001. In 2002, he earned an M.S. degree in network and information technology with high honors from the University of Paris VI. Next, he received a Ph.D. degree in network and information technology with excellent distinction from the University of Paris XIII in 2005. Between 2002 and 2004, he managed a scientific research project on optical service management at ALCATEL research and innovation, Marcoussis, France. At the University of Paris XIII, he worked as a teaching assistant of computer engineering from 2002 until 2006. He joined the Lebanese American University (LAU) as assistant professor of computer engineering in 2006, was promoted to the rank of associate professor in 2012, and then to the rank of full professor in 2019. He is teaching the following courses at LAU: computer networks, data structures, computer programming, engineering programming, optical networks, coe application, and queueing theory. His current research interests are in the areas of optical networks, delay/disruption tolerant networks, and queueing theory. Dr. Fawaz was the recipient of the French ministry of research and education scholarship for distinguished students in 2002 and of a Fulbright research award in 2008. He is a senior member of the IEEE . He served as an Associate Editor for the IEEE Communications Letters journal and is currently serving as associate editor for the Springer Journal of Annals of Telecommunications.</p>
         </div>
       </div>
     </section>
-    <div id="schedule">
-      <div style="margin-left: 14%; top: 0px; font-size: 35px; color: #006e58; font-weight: Bold; padding-bottom: 20px;">Schedule</div>
-      <div class="ribbon"></div>
-      <div class="calendar" id="calendar-app">
-        <div class="calendar--day-view" id="day-view">
-          <span class="day-view-exit" id="day-view-exit">×</span>
-          <span class="day-view-date" id="day-view-date">MAY 29 2016</span>
-          <div class="day-view-content">
-            <div class="day-highlight"> You <span class="day-events" id="day-events">had no events for today</span>. &nbsp; <span tabindex="0" onkeyup="if(event.keyCode != 13) return; this.click();" class="day-events-link" id="add-event" data-date="">Add a new event?</span>
-            </div>
-            <div class="day-add-event" id="add-day-event-box" data-active="false">
-              <div class="row">
-                <div class="half">
-                  <label class="add-event-label"> Name of event <input type="text" class="add-event-edit add-event-edit--long" placeholder="New event" id="input-add-event-name">
-                  </label>
-                </div>
-                <div class="qtr">
-                  <label class="add-event-label"> Start Time <input type="text" class="add-event-edit" placeholder="8:15" id="input-add-event-start-time" data-options="1,2,3,4,5,6,7,8,9,10,11,12" data-format="datetime">
-                    <input type="text" class="add-event-edit" placeholder="am" id="input-add-event-start-ampm" data-options="a,p,am,pm">
-                  </label>
-                </div>
-                <div class="qtr">
-                  <label class="add-event-label"> End Time <input type="text" class="add-event-edit" placeholder="9" id="input-add-event-end-time" data-options="1,2,3,4,5,6,7,8,9,10,11,12" data-format="datetime">
-                    <input type="text" class="add-event-edit" placeholder="am" id="input-add-event-end-ampm" data-options="a,p,am,pm">
-                  </label>
-                </div>
-                <div class="half">
-                  <a onkeyup="if(event.keyCode != 13) return; this.click();" tabindex="0" id="add-event-save" class="event-btn--save event-btn">save</a>
-                  <a tabindex="0" id="add-event-cancel" class="event-btn--cancel event-btn">cancel</a>
-                </div>
-              </div>
-            </div>
-            <div id="day-events-list" class="day-events-list"></div>
-            <div class="day-inspiration-quote" id="inspirational-quote"> Every child is an artist. The problem is how to remain an artist once he grows up. –Pablo Picasso </div>
-          </div>
-        </div>
-        <div class="calendar--view" id="calendar-view">
-          <div class="cview__month">
-            <span class="cview__month-last" id="calendar-month-last" data-date="Thu Dec 01 2022 00:00:00 GMT+0200 (Eastern European Standard Time)">← Dec</span>
-            <span class="cview__month-current cview__month-reset cview__month-activate" id="calendar-month" data-date="Fri Jan 06 2023 16:48:24 GMT+0200 (Eastern European Standard Time)">Jan 2023</span>
-            <span class="cview__month-next" id="calendar-month-next" data-date="Wed Feb 01 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">Feb →</span>
-          </div>
-          <div class="cview__header">Sun</div>
-          <div class="cview__header">Mon</div>
-          <div class="cview__header">Tue</div>
-          <div class="cview__header">Wed</div>
-          <div class="cview__header">Thu</div>
-          <div class="cview__header">Fri</div>
-          <div class="cview__header">Sat</div>
-          <div class="calendar--view" id="dates">
-            <div class="cview--date" data-date="Sun Jan 01 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">1</div>
-            <div class="cview--date" data-date="Mon Jan 02 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">2</div>
-            <div class="cview--date" data-date="Tue Jan 03 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">3</div>
-            <div class="cview--date" data-date="Wed Jan 04 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">4</div>
-            <div class="cview--date" data-date="Thu Jan 05 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">5</div>
-            <div class="cview--date today" data-date="Fri Jan 06 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">6</div>
-            <div class="cview--date" data-date="Sat Jan 07 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">7</div>
-            <div class="cview--date" data-date="Sun Jan 08 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">8</div>
-            <div class="cview--date" data-date="Mon Jan 09 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">9</div>
-            <div class="cview--date" data-date="Tue Jan 10 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">10</div>
-            <div class="cview--date" data-date="Wed Jan 11 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">11</div>
-            <div class="cview--date" data-date="Thu Jan 12 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">12</div>
-            <div class="cview--date" data-date="Fri Jan 13 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">13</div>
-            <div class="cview--date" data-date="Sat Jan 14 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">14</div>
-            <div class="cview--date" data-date="Sun Jan 15 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">15</div>
-            <div class="cview--date" data-date="Mon Jan 16 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">16</div>
-            <div class="cview--date" data-date="Tue Jan 17 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">17</div>
-            <div class="cview--date" data-date="Wed Jan 18 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">18</div>
-            <div class="cview--date" data-date="Thu Jan 19 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">19</div>
-            <div class="cview--date" data-date="Fri Jan 20 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">20</div>
-            <div class="cview--date" data-date="Sat Jan 21 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">21</div>
-            <div class="cview--date" data-date="Sun Jan 22 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">22</div>
-            <div class="cview--date" data-date="Mon Jan 23 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">23</div>
-            <div class="cview--date" data-date="Tue Jan 24 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">24</div>
-            <div class="cview--date" data-date="Wed Jan 25 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">25</div>
-            <div class="cview--date" data-date="Thu Jan 26 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">26</div>
-            <div class="cview--date" data-date="Fri Jan 27 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">27</div>
-            <div class="cview--date" data-date="Sat Jan 28 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">28</div>
-            <div class="cview--date" data-date="Sun Jan 29 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">29</div>
-            <div class="cview--date" data-date="Mon Jan 30 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">30</div>
-            <div class="cview--date" data-date="Tue Jan 31 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">31</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="contact-section2 pb-120" style="background-size: cover; margin-top: 100px;">
+
+
+    <section class="no-top" style="background-size: cover;">
       <div class="container" style="background-size: cover;">
-        <div class="row g-0 align-items-center g-4" style="background-size: cover;">
-          <div class="col-xl-7 col-lg-7" style="background-size: cover; padding-left:55px;">
-            <div class="section-title2 sibling2 text-start" style="background-size: cover;">
-              <h2>JOIN <br> THE SECTION'S WHATSAPP GROUP </h2>
-            </div>
-            <form class="contact-form contact-form2 mt-60">
-              <div class="row" style="background-size: cover;">
-                <div class="col-lg-6" style="background-size: cover;">
-                  <div class="form-inner glass-effect" style="background-size: cover;">
-                    <input type="text" placeholder="Enter your name">
-                  </div>
-                </div>
-                <div class="col-lg-6" style="background-size: cover;">
-                  <div class="form-inner glass-effect" style="background-size: cover;">
-                    <input type="text" placeholder="Enter your lastname">
-                  </div>
-                </div>
-                <div class="col-lg-12" style="background-size: cover;">
-                  <div class="form-inner glass-effect" style="background-size: cover;">
-                    <input type="email" placeholder="Enter your Email">
-                  </div>
-                </div>
-                <div class="col-lg-6" style="background-size: cover;">
-                  <div class="form-inner glass-effect" style="background-size: cover;">
-                    <input type="email" placeholder="Enter your ID">
-                  </div>
-                </div>
-                <div class="col-lg-6" style="background-size: cover;">
-                  <div class="form-inner glass-effect" style="background-size: cover;">
-                    <select style="width: 100%; border: 2px solid #D9D9D9; border-radius: 5px; background: linear-gradient(152.97deg,hsla(0,0%,100%,.12),hsla(0,0%,100%,0)); -webkit-backdrop-filter: blur(15px); backdrop-filter: blur(15px); padding: 14px 20px; transition: all .5s ease-in-out; font-size: 15px; font-family: var(--font-exo); color: var(--white);">
-                      <option value="HTML">Section 1</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-lg-12 text-lg-start text-center" style="padding-bottom: 80px; background-size: cover;">
-                  <button type="submit" class="eg-btn btn--primary2 capsule btn--lg">Send Message &nbsp; <svg width="18" height="15" viewBox="0 0 22 13" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M21.9805 6.64708C21.955 6.74302 20.6834 7.78829 18.0766 9.85862C13.9311 13.156 14.0201 13.0954 13.5751 12.949C13.1809 12.8177 13.0219 12.5097 13.1809 12.1814C13.2127 12.1057 14.6369 10.9342 16.3408 9.5809L19.4309 7.11669V5.90479L16.3091 3.41534C14.23 1.75907 13.1682 0.885493 13.1427 0.789551C13.041 0.466377 13.2635 0.143203 13.6577 0.0472607C13.7595 0.0270623 13.8485 0.00181433 13.8612 0.00181433C14.0201 -0.0385824 14.8467 0.582518 18.1148 3.18306C20.6898 5.23824 21.955 6.27846 21.9805 6.36935C22.0059 6.45015 22.0059 6.57134 21.9805 6.64708Z" fill="white"></path>
-                      <path d="M17.4313 5.90479V7.11669L2.71236 7.10659C2.27365 7.10608 1.84766 7.10558 1.43438 7.10507C1.19278 7.10507 0.954985 7.10457 0.721643 7.10457C0.320448 7.09396 0 6.83189 0 6.51074C0 6.34662 0.0839268 6.19817 0.218718 6.09061C0.349695 5.98659 0.528993 5.92044 0.728001 5.9169L1.23283 5.9164L2.706 5.91488L17.4313 5.90479Z" fill="white"></path>
-                    </svg>
-                  </button>
-                </div>
+        <div class="row" style="background-size: cover;">
+      
+          <div class="col-md-4 mb-sm-30 " data-wow-delay=".2s" style="background-size: cover; visibility: visible; animation-delay: 0.2s; animation-name: fadeInRight;">
+            <div class="card">
+              <h3 class="card__title"> Computer  Networks </h3>
+              
+              
+              <div class="card__arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
+                  <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
+                </svg>
               </div>
-            </form>
+            </div>
           </div>
-          <div class="col-xl-4 col-lg-5 offset-xl-1" style="background-size: cover;">
-            <ul class="address-list sibling2">
-              <li>
-                <div class="icon" style="background-size: cover; background-color: white;">
-                  <p style="color:#006e58;font-size:28px;">1</p>
-                </div>
-                <div class="text" style="background-size: cover;">
-                  <h4 style="color:white;">Kindly fill out the form</h4>
-                </div>
-              </li>
-              <li>
-                <div class="icon" style="background-size: cover;  background-color: white;">
-                  <p style="color:#006e58;font-size:28px;">2</p>
-                </div>
-                <div class="text" style="background-size: cover;">
-                  <h4 style="color:white;">The WhatsApp group link will be sent to you via email</h4>
-                </div>
-              </li>
-            </ul>
+          <div class="col-md-4 mb-sm-30 " data-wow-delay=".2s" style="background-size: cover; visibility: visible; animation-delay: 0.2s; animation-name: fadeInRight;">
+            <div class="card">
+              <h3 class="card__title">Data Structures </h3>
+              <div class="card__arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
+                  <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-sm-30 " data-wow-delay=".2s" style="background-size: cover; visibility: visible; animation-delay: 0.2s; animation-name: fadeInRight;">
+            <div class="card">
+              <h3 class="card__title">Computer Programming </h3>
+              <div class="card__arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
+                  <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-sm-30 " data-wow-delay=".2s" style="background-size: cover; visibility: visible; animation-delay: 0.2s; animation-name: fadeInRight;">
+            <div class="card">
+              <h3 class="card__title">Optical Network</h3>
+              <div class="card__arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
+                  <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-sm-30 " data-wow-delay=".2s" style="background-size: cover; visibility: visible; animation-delay: 0.2s; animation-name: fadeInRight;">
+            <div class="card">
+              <h3 class="card__title">Coe Application</h3>
+              <div class="card__arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
+                  <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-sm-30 " data-wow-delay=".2s" style="background-size: cover; visibility: visible; animation-delay: 0.2s; animation-name: fadeInRight;">
+            <div class="card">
+              <h3 class="card__title">Queueing Theory</h3>
+              <div class="card__arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
+                  <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
+                </svg>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+    </section>
+
+
     <footer>
       <p>
-        <strong>Copyright ©2022</strong>
+        <strong>Copyright ©2023</strong>
       </p>
     </footer>
+
+
   </body>
-  <script type="text/javascript" src='{% static "js/calendar.js" %}'></script>
-  <script>
-    var container = document.getElementById('container')
-    var slider = document.getElementById('slider');
-    var slides = document.getElementsByClassName('slide').length;
-    var buttons = document.getElementsByClassName('btn');
-    var currentPosition = 0;
-    var currentMargin = 0;
-    var slidesPerPage = 0;
-    var slidesCount = slides - slidesPerPage;
-    var containerWidth = container.offsetWidth;
-    var prevKeyActive = false;
-    var nextKeyActive = true;
-    window.addEventListener("resize", checkWidth);
-
-    function checkWidth() {
-      containerWidth = container.offsetWidth;
-      setParams(containerWidth);
-    }
-
-    function setParams(w) {
-      if (w < 551) {
-        slidesPerPage = 1;
-      } else {
-        if (w < 901) {
-          slidesPerPage = 2;
-        } else {
-          if (w < 1101) {
-            slidesPerPage = 3;
-          } else {
-            slidesPerPage = 4;
-          }
-        }
-      }
-      slidesCount = slides - slidesPerPage;
-      if (currentPosition > slidesCount) {
-        currentPosition -= slidesPerPage;
-      };
-      currentMargin = -currentPosition * (100 / slidesPerPage);
-      slider.style.marginLeft = currentMargin + '%';
-      if (currentPosition > 0) {
-        buttons[0].classList.remove('inactive');
-      }
-      if (currentPosition < slidesCount) {
-        buttons[1].classList.remove('inactive');
-      }
-      if (currentPosition >= slidesCount) {
-        buttons[1].classList.add('inactive');
-      }
-    }
-    setParams();
-
-    function slideRight() {
-      if (currentPosition != 0) {
-        slider.style.marginLeft = currentMargin + (100 / slidesPerPage) + '%';
-        currentMargin += (100 / slidesPerPage);
-        currentPosition--;
-      };
-      if (currentPosition === 0) {
-        buttons[0].classList.add('inactive');
-      }
-      if (currentPosition < slidesCount) {
-        buttons[1].classList.remove('inactive');
-      }
-    };
-
-    function slideLeft() {
-      if (currentPosition != slidesCount) {
-        slider.style.marginLeft = currentMargin - (100 / slidesPerPage) + '%';
-        currentMargin -= (100 / slidesPerPage);
-        currentPosition++;
-      };
-      if (currentPosition == slidesCount) {
-        buttons[1].classList.add('inactive');
-      }
-      if (currentPosition > 0) {
-        buttons[0].classList.remove('inactive');
-      }
-    };
-  </script>
 </html>
