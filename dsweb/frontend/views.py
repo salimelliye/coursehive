@@ -16,6 +16,13 @@ def home(request, *args, **kwargs):
   return render(request, 'home.html', context)
 
 
+def publications(request, *args, **kwargs):
+  context = {
+
+  }
+  return render(request, 'publications.html', context)
+
+
 def course(request, course_Code, section_CRN):
     course = Course.objects.get(Code = course_Code)
     section = Section.objects.get(CRN=section_CRN)

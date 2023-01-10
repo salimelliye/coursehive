@@ -616,7 +616,7 @@ footer {
 }
 
 .banner{
-  padding-top: 80px;
+  padding-top: 70px;
 }
 
 .positiontitle{
@@ -637,6 +637,7 @@ footer {
   text-align: center;
   padding-top: 10px;
   font-size:15px;
+  line-height: 22px;
   }
 }
 
@@ -784,3 +785,5 @@ footer {
 .card:hover .card__arrow svg {
   transform: translateX(3px);
 }
+
+
