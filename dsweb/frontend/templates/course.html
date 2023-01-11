@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
+
   <body>
     <nav>
       <input type="checkbox" id="check">
@@ -22,30 +23,27 @@
       </label>
       <ul>
         <li>
-          <a class="active" href="#">Home</a>
+          <a  href="{% url 'home' %}">Home</a>
         </li>
         <li>
-          <a href="#">Syllabus</a>
+          <a href="{% url 'publications' %}">Publications</a>
         </li>
         <li>
-          <a href="#">Instructor</a>
+          <a class="active" href="#">Courses</a>
         </li>
         <li>
-          <a href="#">Material</a>
-        </li>
-        <li>
-          <a href="#">Join</a>
+          <a href='{{instructor.Cv.url}}'>CV</a>
         </li>
       </ul>
     </nav>
-    <section id="subheader" class="jarallax text-white" style="z-index: 0; background-size: cover; background-color: #006e58; height: 270px;">
+ 
+    <section id="subheader" class="jarallax text-white" style="z-index: 0; background-size: cover; background-color: #006e58; height: 350px;">
       <div class="center-y relative text-center" style="background-size: cover;">
         <div class="container" style="background-size: cover;">
           <div class="row" style="background-size: cover;">
-            <div class="col text-center" style="background-size: cover;">
+            <div class="col text-center" style="background-size: cover; padding-top: 95px;">
               <div class="spacer-single" style="background-size: cover;"></div>
-              <h1>Data Structures</h1>
-              <p style="font-size:25px; color:white;">SECTION'S CRN : 3948</p>
+              <h1>{{course.Title}}</h1>
             </div>
             <div class="clearfix" style="background-size: cover;"></div>
           </div>
@@ -53,7 +51,9 @@
       </div>
       <div id="jarallax-container-0" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; z-index: -100; clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%); background-size: cover;"></div>
     </section>
-    <section id="section-text" data-bgcolor="#F0F0F0;" class="text-light" style="background-color: #F0F0F0; background-size: cover; padding: 90px 0 90px 0; position: relative;">
+
+
+    <!-- <section id="section-text" data-bgcolor="#F0F0F0;" class="text-light" style="background-color: #F0F0F0; background-size: cover; padding: 90px 0 90px 0; position: relative;">
       <div class="container" style="background-size: cover;">
         <div class="row align-items-center" style="background-size: cover;">
           <div class="col-lg-4 col-md-12 wow fadeInRight animated" data-wow-delay=".2s" style="background-size: cover; visibility: visible; animation-delay: 0.2s; animation-name: fadeInRight;">
@@ -74,8 +74,10 @@
           </div>
         </div>
       </div>
-    </section>
-    <div style="margin-left: 13%; top: -20px; font-size: 35px; color: #006e58; font-weight: Bold; position: relative; ">Lectures</div>
+    </section> -->
+
+
+   <section style="background-size: cover; margin-top:90px">
     <div id="container">
       <div id="slider-container">
         <span onclick="slideRight()" class="btn"></span>
@@ -87,24 +89,6 @@
             <span>2</span>
           </div>
           <div class="slide">
-            <span>3 <span>
-          </div>
-          <div class="slide">
-            <span>4</span>
-          </div>
-          <div class="slide">
-            <span>5</span>
-          </div>
-          <div class="slide">
-            <span>6</span>
-          </div>
-          <div class="slide">
-            <span>7</span>
-          </div>
-          <div class="slide">
-            <span>8</span>
-          </div>
-          <div class="slide">
             <span>9</span>
           </div>
           <div class="slide">
@@ -114,6 +98,8 @@
         <span onclick="slideLeft()" class="btn"></span>
       </div>
     </div>
+    </section>
+
     <section style="background-size: cover; margin-top:190px; background-color: #8FB9B2;">
       <div class="container" style="background-size: cover;">
         <div class="row" style="background-size: cover;  padding-top:40px;  padding-bottom:40px;">
@@ -300,12 +286,14 @@
                 <div class="col-lg-6" style="background-size: cover;">
                   <div class="form-inner glass-effect" style="background-size: cover;">
                     <select style="width: 100%; border: 2px solid #D9D9D9; border-radius: 5px; background: linear-gradient(152.97deg,hsla(0,0%,100%,.12),hsla(0,0%,100%,0)); -webkit-backdrop-filter: blur(15px); backdrop-filter: blur(15px); padding: 14px 20px; transition: all .5s ease-in-out; font-size: 15px; font-family: var(--font-exo); color: var(--white);">
-                      <option value="HTML">Section 1</option>
+                      {% for section in course.Sections.all %}
+                      <option value="HTML">{{section.Title}}</option>
+                      {% endfor %}
                     </select>
                   </div>
                 </div>
                 <div class="col-lg-12 text-lg-start text-center" style="padding-bottom: 80px; background-size: cover;">
-                  <button type="submit" class="eg-btn btn--primary2 capsule btn--lg">Send Message &nbsp; <svg width="18" height="15" viewBox="0 0 22 13" xmlns="http://www.w3.org/2000/svg">
+                  <button type="submit" class="eg-btn btn--primary2 capsule btn--lg">Send Request &nbsp; <svg width="18" height="15" viewBox="0 0 22 13" xmlns="http://www.w3.org/2000/svg">
                       <path d="M21.9805 6.64708C21.955 6.74302 20.6834 7.78829 18.0766 9.85862C13.9311 13.156 14.0201 13.0954 13.5751 12.949C13.1809 12.8177 13.0219 12.5097 13.1809 12.1814C13.2127 12.1057 14.6369 10.9342 16.3408 9.5809L19.4309 7.11669V5.90479L16.3091 3.41534C14.23 1.75907 13.1682 0.885493 13.1427 0.789551C13.041 0.466377 13.2635 0.143203 13.6577 0.0472607C13.7595 0.0270623 13.8485 0.00181433 13.8612 0.00181433C14.0201 -0.0385824 14.8467 0.582518 18.1148 3.18306C20.6898 5.23824 21.955 6.27846 21.9805 6.36935C22.0059 6.45015 22.0059 6.57134 21.9805 6.64708Z" fill="white"></path>
                       <path d="M17.4313 5.90479V7.11669L2.71236 7.10659C2.27365 7.10608 1.84766 7.10558 1.43438 7.10507C1.19278 7.10507 0.954985 7.10457 0.721643 7.10457C0.320448 7.09396 0 6.83189 0 6.51074C0 6.34662 0.0839268 6.19817 0.218718 6.09061C0.349695 5.98659 0.528993 5.92044 0.728001 5.9169L1.23283 5.9164L2.706 5.91488L17.4313 5.90479Z" fill="white"></path>
                     </svg>

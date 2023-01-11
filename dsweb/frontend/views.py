@@ -10,8 +10,11 @@ from django.shortcuts import render
 
 
 def home(request, *args, **kwargs):
+  instructor = Instructor.objects.last()
+  course = Course.objects.all()
   context = {
-
+  'instructor':instructor,
+  'course':course,
   }
   return render(request, 'home.html', context)
 
@@ -23,14 +26,12 @@ def publications(request, *args, **kwargs):
   return render(request, 'publications.html', context)
 
 
-def course(request, course_Code, section_CRN):
+def course(request, course_Code):
     course = Course.objects.get(Code = course_Code)
-    section = Section.objects.get(CRN=section_CRN)
     instructor = Instructor.objects.all()
     context = {
     'form': LinkRequestForm,
     'course': course,
-    'section': section,
     'instructor': instructor,
    
     }

@@ -35,7 +35,7 @@
           <a href="#">Courses</a>
         </li>
         <li>
-          <a href="#">CV</a>
+          <a href='{{instructor.Cv.url}}'>CV</a>
         </li>
       </ul>
     </nav>
@@ -46,30 +46,30 @@
         <div class="row align-items-center" style="background-size: cover;">
           <div class="col-lg-4 col-md-12 wow fadeInRight animated" data-wow-delay=".2s" style="background-size: cover; visibility: visible; animation-delay: 0.2s; animation-name: fadeInRight;">
             <div class=" text-center" style="background-size: cover;">
-              <img class="mainphoto" src='{% static "images/faculty-wissam-fawwaz.jpg" %}'>
+              <img class="mainphoto" src='{{instructor.Image.url}}'>
             </div>
           </div>
           <div class="col-lg-4 p-lg-5  mb-sm-30 wow fadeInRight animated instructorname" data-wow-delay=".4s" style="background-size: cover; visibility: visible; animation-delay: 0.4s; animation-name: fadeInRight;">
-            <span class="positiontitle">Full Professor of Computer Engineering</span>
+            <span class="positiontitle">{{instructor.Position}}</span>
             <br>
-            <h2 style="color:white;">DR. <br> WISSAM FAWAZ </h2>
+            <h2 style="color:white;">DR. <br> {{instructor.Fullname}} </h2>
             <br>
             <div >
-              <i class="fa fa-twitter" style="font-size:24px; color: #8FB9B2; "></i>
-              <i class="fa fa-linkedin" style="font-size:24px; color:#8FB9B2; padding-left:10px;"></i>
-              <i class="fa fa-github" style="font-size:24px; color:#8FB9B2; padding-left:10px;"></i>
+              <a href='{{instructor.TwitterURL}}' target="_blank"><i class="fa fa-twitter" style="font-size:24px; color: #8FB9B2; "></i></a>
+              <a href='{{instructor.LinkdinURL}}' target="_blank"><i class="fa fa-linkedin" style="font-size:24px; color:#8FB9B2; padding-left:10px;"></i></a>
+              <a href='{{instructor.GithubURL}}' target="_blank"><i class="fa fa-github" style="font-size:24px; color:#8FB9B2; padding-left:10px;"></i></a>
             </div>
           </div>
           
           <div class="col-lg-4 wow fadeInRight animated responsive" data-wow-delay=".6s" style="background-size: cover; visibility: visible; animation-delay: 0.6s; animation-name: fadeInRight;">
             <h3 class="bannertitleinfo">Mail Address:</h3>
-            <p class="bannerprinfo"> Lebanese American University P.O. Box 36 / ECE Dept Byblos Lebanon.</p>
+            <p class="bannerprinfo">{{instructor.Address}}</p>
             <h3 class="bannertitleinfo">Email: </h3>
-            <p class="bannerprinfo"> wissam.fawaz@lau.edu.lb</p>
+            <p class="bannerprinfo">{{instructor.Email}}</p>
             <h3 class="bannertitleinfo">Tel: </h3>
-            <p class="bannerprinfo"> +961.9.547254 Ext: 2414</p>
+            <p class="bannerprinfo">{{instructor.Tel}}</p>
             <h3 class="bannertitleinfo">Fax: </h3>
-            <p class="bannerprinfo">+961.9.547256</p>
+            <p class="bannerprinfo">{{instructor.Fax}}</p>
             <i class="fa fa-twitter" style="font-size:24px; color:#006e58; "></i>
             <i class="fa fa-linkedin" style="font-size:24px; color:#006e58; padding-left:10px;"></i>
             <i class="fa fa-globe" style="font-size:24px; color:#006e58; padding-left:10px;"></i>
@@ -82,78 +82,29 @@
       <div class="container biographysection" style="padding-left:15px;">
         <div class="biographybox">
           <h1 class="biographytitle">Biography</h1>
-          <p class="biographyinfo">Wissam Fawaz received a B.E. in computer engineering with high honors from the Lebanese University in 2001. In 2002, he earned an M.S. degree in network and information technology with high honors from the University of Paris VI. Next, he received a Ph.D. degree in network and information technology with excellent distinction from the University of Paris XIII in 2005. Between 2002 and 2004, he managed a scientific research project on optical service management at ALCATEL research and innovation, Marcoussis, France. At the University of Paris XIII, he worked as a teaching assistant of computer engineering from 2002 until 2006. He joined the Lebanese American University (LAU) as assistant professor of computer engineering in 2006, was promoted to the rank of associate professor in 2012, and then to the rank of full professor in 2019. He is teaching the following courses at LAU: computer networks, data structures, computer programming, engineering programming, optical networks, coe application, and queueing theory. His current research interests are in the areas of optical networks, delay/disruption tolerant networks, and queueing theory. Dr. Fawaz was the recipient of the French ministry of research and education scholarship for distinguished students in 2002 and of a Fulbright research award in 2008. He is a senior member of the IEEE . He served as an Associate Editor for the IEEE Communications Letters journal and is currently serving as associate editor for the Springer Journal of Annals of Telecommunications.</p>
+          <p class="biographyinfo">{{instructor.Description}}</p>
         </div>
       </div>
     </section>
 
 
     <section class="no-top" style="background-size: cover;">
-      <div class="container" style="background-size: cover;">
+      <div class="container " style="background-size: cover;">
+
         <div class="row" style="background-size: cover;">
-      
+         {% for course in course %}
           <div class="col-md-4 mb-sm-30 " data-wow-delay=".2s" style="background-size: cover; visibility: visible; animation-delay: 0.2s; animation-name: fadeInRight;">
             <div class="card">
-              <h3 class="card__title"> Computer  Networks </h3>
-              
-              
+            <a href="/{{course.Code}}"><h3 class="card__title"> {{course.Title}} </h3></a>
+            <a href="/{{course.Code}}">
               <div class="card__arrow">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
                   <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
                 </svg>
-              </div>
+              </a></div>
             </div>
           </div>
-          <div class="col-md-4 mb-sm-30 " data-wow-delay=".2s" style="background-size: cover; visibility: visible; animation-delay: 0.2s; animation-name: fadeInRight;">
-            <div class="card">
-              <h3 class="card__title">Data Structures </h3>
-              <div class="card__arrow">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
-                  <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-sm-30 " data-wow-delay=".2s" style="background-size: cover; visibility: visible; animation-delay: 0.2s; animation-name: fadeInRight;">
-            <div class="card">
-              <h3 class="card__title">Computer Programming </h3>
-              <div class="card__arrow">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
-                  <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-sm-30 " data-wow-delay=".2s" style="background-size: cover; visibility: visible; animation-delay: 0.2s; animation-name: fadeInRight;">
-            <div class="card">
-              <h3 class="card__title">Optical Network</h3>
-              <div class="card__arrow">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
-                  <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-sm-30 " data-wow-delay=".2s" style="background-size: cover; visibility: visible; animation-delay: 0.2s; animation-name: fadeInRight;">
-            <div class="card">
-              <h3 class="card__title">Coe Application</h3>
-              <div class="card__arrow">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
-                  <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-sm-30 " data-wow-delay=".2s" style="background-size: cover; visibility: visible; animation-delay: 0.2s; animation-name: fadeInRight;">
-            <div class="card">
-              <h3 class="card__title">Queueing Theory</h3>
-              <div class="card__arrow">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
-                  <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
-                </svg>
-              </div>
-            </div>
-          </div>
+         {% endfor %}
         </div>
     </section>
 

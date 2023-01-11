@@ -15,6 +15,7 @@ class Course(models.Model):
     Title = models.CharField(max_length=100)
     Code = models.CharField(max_length=10 ,null=True,)
     About = models.TextField(null=True)
+    Sections = models.ManyToManyField('Section')
     def __str__(self):
       return f"{self.Title}"
     
@@ -26,22 +27,28 @@ class Section(models.Model):
     CRN = models.CharField(max_length=5)
     WhatsaapGroup =  models.URLField(u'Whatsaap Group',max_length = 200, null=True, blank=True)
     Syllabus = models.FileField( null=True)
-    RelatedCourse = models.ManyToManyField( 'Course')
     Instructor = models.ForeignKey('Instructor', on_delete=models.CASCADE, null=True, blank=True)
     def __str__(self):
       return f"{self.Title}:{self.CRN}"
 
     
 
-     
 
 class Instructor(models.Model):
     Fullname = models.CharField(u'Full Name',max_length=300)
+    Position = models.CharField(max_length=300, null=True, blank=True)
     Description =  models.TextField()
-    Image = models.ImageField()
-    TwitterURL = models.URLField(u'Twitter URL - Optional', max_length = 200, null=True, blank=True)
-    LinkdinURL = models.URLField(u'Linkdin URL - Optional', max_length = 200, null=True, blank=True)
     Email = models.EmailField(max_length = 254, null=True)
+    Image = models.ImageField()
+    Cv = models.FileField( null=True)
+    Address = models.CharField(max_length=300, null=True, blank=True)
+    Tel = models.CharField(max_length=100, null=True, blank=True)
+    Fax = models.CharField(max_length=50, null=True, blank=True)
+    TwitterURL = models.URLField(u'Twitter URL', max_length = 200, null=True, blank=True)
+    LinkdinURL = models.URLField(u'Linkdin URL', max_length = 200, null=True, blank=True)
+    GithubURL = models.URLField(u'Github URL', max_length = 200, null=True, blank=True)
+    
+
     def __str__(self):
       return f"{self.Fullname}"
     
@@ -50,7 +57,7 @@ class Instructor(models.Model):
 class Lecture(models.Model):
   Title = models.CharField(max_length=300)
   ShortDescription =  models.TextField(u'Short Description',)
-  Section = models.ManyToManyField('Section')
+  Course = models.ForeignKey('Course', on_delete=models.CASCADE, null=True, blank=True)
   def __str__(self):
       return f"{self.Title}"
   
