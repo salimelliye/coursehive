@@ -14,6 +14,7 @@ class Course(models.Model):
     Code = models.CharField(max_length=10 ,null=True,)
     About = models.TextField(null=True)
     Sections = models.ManyToManyField('Section')
+    Form = models.BooleanField('Form', default=False) 
     def __str__(self):
       return f"{self.Title}"
     
