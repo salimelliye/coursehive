@@ -42,7 +42,7 @@ class Instructor(models.Model):
     Cv = models.FileField( null=True)
     Address = models.CharField(max_length=300, null=True, blank=True)
     Tel = models.CharField(max_length=100, null=True, blank=True)
-    Fax = models.CharField(max_length=50, null=True, blank=True)
+    OfficeHours = models.CharField(u'Office Hours', max_length=400, null=True, blank=True)
     TwitterURL = models.URLField(u'Twitter URL', max_length = 200, null=True, blank=True)
     LinkdinURL = models.URLField(u'Linkdin URL', max_length = 200, null=True, blank=True)
     GithubURL = models.URLField(u'Github URL', max_length = 200, null=True, blank=True)
