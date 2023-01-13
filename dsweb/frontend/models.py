@@ -6,8 +6,6 @@ from django.template.defaultfilters import slugify
 from django.db import models
 
 
-
-
 # Create your models here.
 
 
@@ -55,9 +53,10 @@ class Instructor(models.Model):
 
 
 class Lecture(models.Model):
-  Title = models.CharField(max_length=300)
+  Title = models.IntegerField(u'Lecture Number')
   ShortDescription =  models.TextField(u'Short Description',)
   Course = models.ForeignKey('Course', on_delete=models.CASCADE, null=True, blank=True)
+  Date = models.DateField(null=True)
   def __str__(self):
       return f"{self.Title}"
   
@@ -69,6 +68,7 @@ class Student(models.Model):
   IDNumber = models.CharField(max_length=20)
   Email = models.EmailField(max_length = 254, null=True)
   Approved = models.BooleanField('Approved', default=False) 
+  Section = models.ForeignKey('Section', on_delete=models.CASCADE, null=True, blank=True)
   
   def __str__(self):
       return f"{self.Name} {self.LastName}"
@@ -86,11 +86,12 @@ class Student(models.Model):
 
 class Material(models.Model):
   Notes = models.FileField(blank=True)
-  Files = models.FileField(blank=True)
+  JavaFiles = models.FileField(blank=True)
   Videos = models.FileField(blank=True)
+  Solution = models.FileField(u'Solution Keys',blank=True, null=True)
   Lecture = models.ForeignKey('Lecture', on_delete=models.CASCADE, null=True, blank=True)
   def __str__(self):
-      return f"{self.Lecture}'s Material"
+      return f"Lecture {self.Lecture}'s Material"
 
 
 class Event(models.Model):

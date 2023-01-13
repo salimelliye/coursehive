@@ -10,6 +10,6 @@ class LinkRequestForm(ModelForm):
     Email = forms.EmailInput()
     class Meta:
         model = Student
-        fields = ['Name', 'LastName', 'IDNumber', 'Email',]
+        fields = ['Name', 'LastName', 'IDNumber', 'Email', 'Section',]
 
       

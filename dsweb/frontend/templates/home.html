@@ -22,20 +22,20 @@
         <i class="fas fa-bars"></i>
       </label>
       <label class="logo">
-        <img src='{% static "images/LAU-logo.png" %}' alt="LAU logo" style="width:140px;height:70px; padding-top:10px;">
+        <a href="https://www.lau.edu.lb/" target="_blank"><img src='{% static "images/LAU-logo.png" %}' alt="LAU logo" class="logoimg zoom"></a>
       </label>
       <ul>
         <li>
           <a class="active" href="{% url 'home' %}">Home</a>
         </li>
         <li>
+          <a href="/#Courses">Courses</a>
+        </li>
+        <li>
           <a href="{% url 'publications' %}">Publications</a>
         </li>
         <li>
-          <a href="#">Courses</a>
-        </li>
-        <li>
-          <a href='{{instructor.Cv.url}}'>CV</a>
+          <a href='{{instructor.Cv.url}}' target="_blank">CV</a>
         </li>
       </ul>
     </nav>
@@ -52,7 +52,7 @@
           <div class="col-lg-4 p-lg-5  mb-sm-30 wow fadeInRight animated instructorname" data-wow-delay=".4s" style="background-size: cover; visibility: visible; animation-delay: 0.4s; animation-name: fadeInRight;">
             <span class="positiontitle">{{instructor.Position}}</span>
             <br>
-            <h2 style="color:white;">DR. <br> {{instructor.Fullname}} </h2>
+            <h2 style="color:white;">Dr. <br> {{instructor.Fullname}} </h2>
             <br>
             <div >
               <a href='{{instructor.TwitterURL}}' target="_blank"><i class="fa fa-twitter" style="font-size:24px; color: #8FB9B2; "></i></a>
@@ -88,10 +88,9 @@
     </section>
 
 
-    <section class="no-top" style="background-size: cover;">
-      <div style="font-size: 35px; color: #006e58; font-weight: Bold; text-align: center; padding-bottom: 40px;">Courses</div>
-      <div class="container " style="background-size: cover;">
-
+    <section id="Courses" class="no-top" style="background-size: cover;">
+      <div class="container " style="background-size: cover; ">
+        <h1 class="biographytitle" style="padding-left:35px;">Courses</h1>
         <div class="row" style="background-size: cover;">
          {% for course in course %}
           <div class="col-md-4 mb-sm-30 " data-wow-delay=".2s" style="background-size: cover; visibility: visible; animation-delay: 0.2s; animation-name: fadeInRight;">
@@ -111,7 +110,7 @@
 
 
     <footer>
-      <p>
+      <p class="footerp">
         <strong>Copyright ©2023</strong>
       </p>
     </footer>

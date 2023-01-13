@@ -28,11 +28,14 @@ def publications(request, *args, **kwargs):
 
 def course(request, course_Code):
     course = Course.objects.get(Code = course_Code)
+    material = Material.objects.all().filter(Lecture__Course = course.id)
+   
     instructor = Instructor.objects.all()
     context = {
     'form': LinkRequestForm,
     'course': course,
     'instructor': instructor,
+    'material':material,
    
     }
     if request.POST:

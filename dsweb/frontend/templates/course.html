@@ -19,20 +19,20 @@
         <i class="fas fa-bars"></i>
       </label>
       <label class="logo">
-        <img src='{% static "images/LAU-logo.png" %}' alt="LAU logo" style="width:140px;height:70px; padding-top:10px;">
+        <a href="https://www.lau.edu.lb/" target="_blank"><img src='{% static "images/LAU-logo.png" %}' alt="LAU logo" class="logoimg"></a>
       </label>
       <ul>
         <li>
           <a  href="{% url 'home' %}">Home</a>
         </li>
         <li>
+          <a href="/#Courses" class="active">Courses</a>
+        </li>
+        <li>
           <a href="{% url 'publications' %}">Publications</a>
         </li>
         <li>
-          <a class="active" href="#">Courses</a>
-        </li>
-        <li>
-          <a href='{{instructor.Cv.url}}'>CV</a>
+          <a href='{{instructor.Cv.url}}' target="_blank">CV</a>
         </li>
       </ul>
     </nav>
@@ -78,129 +78,51 @@
 
 
    <section style="background-size: cover; margin-top:90px">
-    <div style="font-size: 35px; color: #006e58; font-weight: Bold; text-align: center; padding-bottom: 80px; border-bottom: solid 3px #8FB9B2;">Lectures</div>
+    <div style="font-size: 35px; color: #006e58; font-weight: Bold; text-align: center; padding-bottom: 80px; ">Lectures</div>
     <div id="container">
       <div id="slider-container">
         <span onclick="slideRight()" class="btn"></span>
         <div id="slider">
+          {% for lec in material %}
           <div class="slide">
-            <span>1</span>
+           <a href='{{lec.Videos.url}}'><span>{{lec.Lecture.Title}}</span></a>
           </div>
-          <div class="slide">
-            <span>2</span>
-          </div>
-          <div class="slide">
-            <span>9</span>
-          </div>
-          <div class="slide">
-            <span>10</span>
-          </div>
+          {% endfor %}
         </div>
         <span onclick="slideLeft()" class="btn"></span>
       </div>
     </div>
     </section>
 
-    <section style="background-size: cover; margin-top:190px; background-color: #8FB9B2;">
-      <div class="container" style="background-size: cover;">
-        <div class="row" style="background-size: cover;  padding-top:40px;  padding-bottom:40px;">
-          <div class="col-lg-4 col-md-6 mb30" style="background-size: cover;">
-            <div class="f-box f-icon-left f-icon-rounded" style="background-size: cover;">
-              <i class="icofont-group bg-color text-light"></i>
-              <div class="fb-text" style="background-size: cover;">
-                <h4>Lecture 1's Files</h4>
-                <p style="padding-top:10px;">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem. </p>
-              </div>
-            </div>
-          </div>
-        </div>
+    <section style="background-size: cover; margin-top:240px;">
+      <div class="container" style="background-size: cover; padding-left: 15px;;">
+        <table>
+        
+          <thead>
+            <tr>
+              <th scope="col" style="color:#006e58;">Date</th>
+              <th scope="col" style="color:#006e58;">Topic</th>
+              <th scope="col" style="color:#006e58;">Solution Keys</th>
+              <th scope="col" style="color:#006e58;">Java Files</th>
+              <th scope="col" style="color:#006e58;">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              {% for item in material %}
+              <td data-label="Date">{{item.Lecture.Date}}</td>
+              <td data-label="Topic">{{item.Lecture.ShortDescription}}</td>
+              <td data-label="Solution Keys"><a href="{{item.Solution.url}}" style="color:black;" target="_blank">Lecture {{item.Lecture.Title}}'s Solution Key <i class="fa fa-angle-double-right"></i> </a></td>
+              <td data-label="Java Files"><a href="{{item.JavaFiles.url}}" style="color:black;" target="_blank">Lecture {{item.Lecture.Title}}'s Java Files <i class="fa fa-angle-double-right"></i> </a></td>
+              <td data-label="Java Files"><a href="{{item.Notes.url}}" style="color:black;" target="_blank">Lecture {{item.Lecture.Title}}'s Notes <i class="fa fa-angle-double-right"></i> </a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+
       </div>
     </section>
-    <div id="schedule">
-      <div style="margin-left: 14%; top: 0px; font-size: 35px; color: #006e58; font-weight: Bold; padding-bottom: 20px;">Schedule</div>
-      <div class="ribbon"></div>
-      <div class="calendar" id="calendar-app">
-        <div class="calendar--day-view" id="day-view">
-          <span class="day-view-exit" id="day-view-exit">×</span>
-          <span class="day-view-date" id="day-view-date">MAY 29 2016</span>
-          <div class="day-view-content">
-            <div class="day-highlight"> You <span class="day-events" id="day-events">had no events for today</span>. &nbsp; <span tabindex="0" onkeyup="if(event.keyCode != 13) return; this.click();" class="day-events-link" id="add-event" data-date="">Add a new event?</span>
-            </div>
-            <div class="day-add-event" id="add-day-event-box" data-active="false">
-              <div class="row">
-                <div class="half">
-                  <label class="add-event-label"> Name of event <input type="text" class="add-event-edit add-event-edit--long" placeholder="New event" id="input-add-event-name">
-                  </label>
-                </div>
-                <div class="qtr">
-                  <label class="add-event-label"> Start Time <input type="text" class="add-event-edit" placeholder="8:15" id="input-add-event-start-time" data-options="1,2,3,4,5,6,7,8,9,10,11,12" data-format="datetime">
-                    <input type="text" class="add-event-edit" placeholder="am" id="input-add-event-start-ampm" data-options="a,p,am,pm">
-                  </label>
-                </div>
-                <div class="qtr">
-                  <label class="add-event-label"> End Time <input type="text" class="add-event-edit" placeholder="9" id="input-add-event-end-time" data-options="1,2,3,4,5,6,7,8,9,10,11,12" data-format="datetime">
-                    <input type="text" class="add-event-edit" placeholder="am" id="input-add-event-end-ampm" data-options="a,p,am,pm">
-                  </label>
-                </div>
-                <div class="half">
-                  <a onkeyup="if(event.keyCode != 13) return; this.click();" tabindex="0" id="add-event-save" class="event-btn--save event-btn">save</a>
-                  <a tabindex="0" id="add-event-cancel" class="event-btn--cancel event-btn">cancel</a>
-                </div>
-              </div>
-            </div>
-            <div id="day-events-list" class="day-events-list"></div>
-            <div class="day-inspiration-quote" id="inspirational-quote"> Every child is an artist. The problem is how to remain an artist once he grows up. –Pablo Picasso </div>
-          </div>
-        </div>
-        <div class="calendar--view" id="calendar-view">
-          <div class="cview__month">
-            <span class="cview__month-last" id="calendar-month-last" data-date="Thu Dec 01 2022 00:00:00 GMT+0200 (Eastern European Standard Time)">← Dec</span>
-            <span class="cview__month-current cview__month-reset cview__month-activate" id="calendar-month" data-date="Fri Jan 06 2023 16:48:24 GMT+0200 (Eastern European Standard Time)">Jan 2023</span>
-            <span class="cview__month-next" id="calendar-month-next" data-date="Wed Feb 01 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">Feb →</span>
-          </div>
-          <div class="cview__header">Sun</div>
-          <div class="cview__header">Mon</div>
-          <div class="cview__header">Tue</div>
-          <div class="cview__header">Wed</div>
-          <div class="cview__header">Thu</div>
-          <div class="cview__header">Fri</div>
-          <div class="cview__header">Sat</div>
-          <div class="calendar--view" id="dates">
-            <div class="cview--date" data-date="Sun Jan 01 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">1</div>
-            <div class="cview--date" data-date="Mon Jan 02 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">2</div>
-            <div class="cview--date" data-date="Tue Jan 03 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">3</div>
-            <div class="cview--date" data-date="Wed Jan 04 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">4</div>
-            <div class="cview--date" data-date="Thu Jan 05 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">5</div>
-            <div class="cview--date today" data-date="Fri Jan 06 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">6</div>
-            <div class="cview--date" data-date="Sat Jan 07 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">7</div>
-            <div class="cview--date" data-date="Sun Jan 08 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">8</div>
-            <div class="cview--date" data-date="Mon Jan 09 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">9</div>
-            <div class="cview--date" data-date="Tue Jan 10 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">10</div>
-            <div class="cview--date" data-date="Wed Jan 11 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">11</div>
-            <div class="cview--date" data-date="Thu Jan 12 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">12</div>
-            <div class="cview--date" data-date="Fri Jan 13 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">13</div>
-            <div class="cview--date" data-date="Sat Jan 14 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">14</div>
-            <div class="cview--date" data-date="Sun Jan 15 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">15</div>
-            <div class="cview--date" data-date="Mon Jan 16 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">16</div>
-            <div class="cview--date" data-date="Tue Jan 17 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">17</div>
-            <div class="cview--date" data-date="Wed Jan 18 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">18</div>
-            <div class="cview--date" data-date="Thu Jan 19 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">19</div>
-            <div class="cview--date" data-date="Fri Jan 20 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">20</div>
-            <div class="cview--date" data-date="Sat Jan 21 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">21</div>
-            <div class="cview--date" data-date="Sun Jan 22 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">22</div>
-            <div class="cview--date" data-date="Mon Jan 23 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">23</div>
-            <div class="cview--date" data-date="Tue Jan 24 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">24</div>
-            <div class="cview--date" data-date="Wed Jan 25 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">25</div>
-            <div class="cview--date" data-date="Thu Jan 26 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">26</div>
-            <div class="cview--date" data-date="Fri Jan 27 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">27</div>
-            <div class="cview--date" data-date="Sat Jan 28 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">28</div>
-            <div class="cview--date" data-date="Sun Jan 29 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">29</div>
-            <div class="cview--date" data-date="Mon Jan 30 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">30</div>
-            <div class="cview--date" data-date="Tue Jan 31 2023 00:00:00 GMT+0200 (Eastern European Standard Time)">31</div>
-          </div>
-        </div>
-      </div>
-    </div>
+
     <div class="contact-section2 pb-120" style="background-size: cover; margin-top: 100px;">
       <div class="container" style="background-size: cover;">
         <div class="row g-0 align-items-center g-4" style="background-size: cover;">
@@ -233,7 +155,7 @@
                 </div>
                 <div class="col-lg-6" style="background-size: cover;">
                   <div class="form-inner glass-effect" style="background-size: cover;">
-                    <select style="width: 100%; border: 2px solid #D9D9D9; border-radius: 5px; background: linear-gradient(152.97deg,hsla(0,0%,100%,.12),hsla(0,0%,100%,0)); -webkit-backdrop-filter: blur(15px); backdrop-filter: blur(15px); padding: 14px 20px; transition: all .5s ease-in-out; font-size: 15px; font-family: var(--font-exo); color: var(--white);">
+                    <select required="" style="width: 100%; border: 2px solid #D9D9D9; border-radius: 5px; background: linear-gradient(152.97deg,hsla(0,0%,100%,.12),hsla(0,0%,100%,0)); -webkit-backdrop-filter: blur(15px); backdrop-filter: blur(15px); padding: 14px 20px; transition: all .5s ease-in-out; font-size: 15px; font-family: var(--font-exo); color: var(--white);">
                       {% for section in course.Sections.all %}
                       <option value="HTML">{{section.Title}}</option>
                       {% endfor %}
@@ -274,8 +196,8 @@
       </div>
     </div>
     <footer>
-      <p>
-        <strong>Copyright ©2022</strong>
+      <p class="footerp">
+        <strong>Copyright ©2023</strong>
       </p>
     </footer>
   </body>
