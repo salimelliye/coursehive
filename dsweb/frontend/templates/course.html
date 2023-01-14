@@ -113,9 +113,12 @@
               {% for item in material %}
               <td data-label="Date">{{item.Lecture.Date}}</td>
               <td data-label="Topic">{{item.Lecture.ShortDescription}}</td>
-              <td data-label="Solution Keys"><a href="{{item.Solution.url}}" style="color:black;" target="_blank">Lecture {{item.Lecture.Title}}'s Solution Key <i class="fa fa-angle-double-right"></i> </a></td>
-              <td data-label="Java Files"><a href="{{item.JavaFiles.url}}" style="color:black;" target="_blank">Lecture {{item.Lecture.Title}}'s Java Files <i class="fa fa-angle-double-right"></i> </a></td>
-              <td data-label="Java Files"><a href="{{item.Notes.url}}" style="color:black;" target="_blank">Lecture {{item.Lecture.Title}}'s Notes <i class="fa fa-angle-double-right"></i> </a></td>
+              {% if item.Solution %} <td data-label="Solution Keys"><a href="{{item.Solution.url}}" style="color:black;" target="_blank">Lecture {{item.Lecture.Title}}'s Solution Key <i class="fa fa-angle-double-right"></i> </a></td>
+              {% else %} <td data-label="Solution Keys"><a style="color:black;" target="_blank"></td> {% endif %}
+              {% if item.JavaFiles %} <td data-label="Java Files"><a href="{{item.JavaFiles.url}}" style="color:black;" target="_blank">Lecture {{item.Lecture.Title}}'s Java Files <i class="fa fa-angle-double-right"></i> </a></td>
+              {% else %}<td data-label="Java Files"></td> {% endif %}
+              {% if item.Notes %}<td data-label="Notes"><a href="{{item.Notes.url}}" style="color:black;" target="_blank">Lecture {{item.Lecture.Title}}'s Notes <i class="fa fa-angle-double-right"></i> </a></td>
+              {% else %}<td data-label="Notes"></td> {% endif %}
             </tr>
             {% endfor %}
           </tbody>
@@ -275,83 +278,89 @@
     </footer>
   </body>
   <script type="text/javascript" src='{% static "js/calendar.js" %}'></script>
+
   <script>
-    var container = document.getElementById('container')
-    var slider = document.getElementById('slider');
-    var slides = document.getElementsByClassName('slide').length;
-    var buttons = document.getElementsByClassName('btn');
-    var currentPosition = 0;
-    var currentMargin = 0;
-    var slidesPerPage = 0;
-    var slidesCount = slides - slidesPerPage;
-    var containerWidth = container.offsetWidth;
-    var prevKeyActive = false;
-    var nextKeyActive = true;
-    window.addEventListener("resize", checkWidth);
+  var container = document.getElementById('container')
+  var slider = document.getElementById('slider');
+  var slides = document.getElementsByClassName('slide').length;
+  var buttons = document.getElementsByClassName('btn');
 
-    function checkWidth() {
-      containerWidth = container.offsetWidth;
-      setParams(containerWidth);
-    }
 
-    function setParams(w) {
-      if (w < 551) {
+  var currentPosition = 0;
+  var currentMargin = 0;
+  var slidesPerPage = 0;
+  var slidesCount = slides - slidesPerPage;
+  var containerWidth = container.offsetWidth;
+  var prevKeyActive = false;
+  var nextKeyActive = true;
+
+  window.addEventListener("resize", checkWidth);
+
+  function checkWidth() {
+   containerWidth = container.offsetWidth;
+    setParams(containerWidth);
+  }
+
+function setParams(w) {
+    if (w < 551) {
         slidesPerPage = 1;
-      } else {
+    } else {
         if (w < 901) {
-          slidesPerPage = 2;
+            slidesPerPage = 2;
         } else {
-          if (w < 1101) {
-            slidesPerPage = 3;
-          } else {
-            slidesPerPage = 4;
-          }
+            if (w < 1101) {
+                slidesPerPage = 3;
+            } else {
+                slidesPerPage = 4;
+            }
         }
-      }
-      slidesCount = slides - slidesPerPage;
-      if (currentPosition > slidesCount) {
-        currentPosition -= slidesPerPage;
-      };
-      currentMargin = -currentPosition * (100 / slidesPerPage);
-      slider.style.marginLeft = currentMargin + '%';
-      if (currentPosition > 0) {
-        buttons[0].classList.remove('inactive');
-      }
-      if (currentPosition < slidesCount) {
-        buttons[1].classList.remove('inactive');
-      }
-      if (currentPosition >= slidesCount) {
-        buttons[1].classList.add('inactive');
-      }
     }
-    setParams();
+    slidesCount = slides - slidesPerPage;
+    if (currentPosition > slidesCount) {
+        currentPosition -= slidesPerPage;
+    };
+  
+    slider.style.marginLeft = currentMargin + '%';
+    if (currentPosition > 0) {
+        buttons[0].classList.remove('inactive');
+    }
+    if (currentPosition < slidesCount) {
+        buttons[1].classList.remove('inactive');
+    }
+    if (currentPosition >= slidesCount) {
+        buttons[1].classList.add('inactive');
+    }
+}
 
-    function slideRight() {
-      if (currentPosition != 0) {
-        slider.style.marginRight = currentMargin + (100 / slidesPerPage) + '%';
+setParams();
+
+function slideRight() {
+    if (currentPosition != 0) {
+        slider.style.marginLeft = currentMargin + (100 / slidesPerPage) + '%';
         currentMargin += (100 / slidesPerPage);
         currentPosition--;
-      };
-      if (currentPosition === 0) {
-        buttons[0].classList.add('inactive');
-      }
-      if (currentPosition < slidesCount) {
-        buttons[1].classList.remove('inactive');
-      }
     };
+    if (currentPosition === 0) {
+        buttons[0].classList.add('inactive');
+    }
+    if (currentPosition < slidesCount) {
+        buttons[1].classList.remove('inactive');
+    }
+};
 
-    function slideLeft() {
-      if (currentPosition != slidesCount) {
+function slideLeft() {
+    if (currentPosition != slidesCount) {
         slider.style.marginLeft = currentMargin - (100 / slidesPerPage) + '%';
         currentMargin -= (100 / slidesPerPage);
         currentPosition++;
-      };
-      if (currentPosition == slidesCount) {
-        buttons[1].classList.add('inactive');
-      }
-      if (currentPosition > 0) {
-        buttons[0].classList.remove('inactive');
-      }
     };
-  </script>
+    if (currentPosition == slidesCount) {
+        buttons[1].classList.add('inactive');
+    }
+    if (currentPosition > 0) {
+        buttons[0].classList.remove('inactive');
+    }
+};
+</script>
+
 </html>

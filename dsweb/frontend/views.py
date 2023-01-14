@@ -20,8 +20,11 @@ def home(request, *args, **kwargs):
 
 
 def publications(request, *args, **kwargs):
+  publication = Publication.objects.all()
+  category = PublicationCategories.objects.all()
   context = {
-
+  'publication': publication,
+  'category': category
   }
   return render(request, 'publications.html', context)
 

@@ -38,8 +38,10 @@ class MyAdminSite(admin.AdminSite):
             "Instructors": 3,
             "Lectures":4,
             "Materials":5,
-            "Scheduling":6,
-            "Students":7,
+            "Students":6,
+            "Publications":7,
+            "Publication Categories":8,
+            "Scheduling":9,
         }
         app_dict = self._build_app_dict(request)
         # a.sort(key=lambda x: b.index(x[0]))
@@ -63,5 +65,8 @@ admin.site.register(Section, SectionDisplay)
 admin.site.register(Instructor, InstructorDisplay)
 admin.site.register(Lecture, LectureAdmin)
 admin.site.register(Material)
-admin.site.register(Student, StudentDisplay )
+admin.site.register(Student, StudentDisplay)
 admin.site.register(Event, EventDisplay)
+admin.site.register(Publication)
+admin.site.register(PublicationCategories)
+

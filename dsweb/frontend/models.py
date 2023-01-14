@@ -20,7 +20,6 @@ class Course(models.Model):
     
         
        
-
 class Section(models.Model):
     Title = models.CharField(max_length=300)
     CRN = models.CharField(max_length=5)
@@ -31,7 +30,6 @@ class Section(models.Model):
       return f"{self.Title}:{self.CRN}"
 
     
-
 
 class Instructor(models.Model):
     Fullname = models.CharField(u'Full Name',max_length=300)
@@ -46,8 +44,6 @@ class Instructor(models.Model):
     TwitterURL = models.URLField(u'Twitter URL', max_length = 200, null=True, blank=True)
     LinkdinURL = models.URLField(u'Linkdin URL', max_length = 200, null=True, blank=True)
     GithubURL = models.URLField(u'Github URL', max_length = 200, null=True, blank=True)
-    
-
     def __str__(self):
       return f"{self.Fullname}"
     
@@ -55,11 +51,11 @@ class Instructor(models.Model):
 
 class Lecture(models.Model):
   Title = models.IntegerField(u'Lecture Number')
-  ShortDescription =  models.TextField(u'Short Description',)
+  ShortDescription = models.TextField(u'Short Description',)
   Course = models.ForeignKey('Course', on_delete=models.CASCADE, null=True, blank=True)
   Date = models.DateField(null=True)
   def __str__(self):
-      return f"{self.Title}"
+      return f"Lecture {self.Title}"
   
 
 
@@ -88,11 +84,11 @@ class Student(models.Model):
 class Material(models.Model):
   Notes = models.FileField(blank=True)
   JavaFiles = models.FileField(blank=True)
-  Videos = models.FileField(blank=True)
+  Videos = models.FileField()
   Solution = models.FileField(u'Solution Keys',blank=True, null=True)
   Lecture = models.ForeignKey('Lecture', on_delete=models.CASCADE, null=True, blank=True)
   def __str__(self):
-      return f"Lecture {self.Lecture}'s Material"
+      return f" {self.Lecture}'s Material"
 
 
 class Event(models.Model):
@@ -106,3 +102,15 @@ class Event(models.Model):
         verbose_name = u'Scheduling'
         verbose_name_plural = u'Scheduling'
     
+
+class Publication(models.Model):
+  Publication = models.TextField(null=True)
+  PDF = models.FileField(null=True)
+  Category = models.ForeignKey('PublicationCategories', on_delete=models.CASCADE, null=True)
+
+
+class PublicationCategories(models.Model):
+  Title =  models.CharField(max_length=100)
+  class Meta:
+    verbose_name = u'Publication Category'
+    verbose_name_plural = u'Publication Categories'
