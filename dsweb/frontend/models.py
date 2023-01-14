@@ -72,9 +72,9 @@ class Student(models.Model):
   def save(self, *args, **kwargs):
    if self.Approved == True:
       send_mail('Welcome Message',
-      'Dear student note that your request to join the Whatsaap group of the section has been accepted. You are asked to join via the following link:',
+      'Dear student note that your request to join the Whatsaap group of the section has been accepted. You are asked to join via the following link:' + self.Section.WhatsaapGroup,
       settings.EMAIL_HOST_USER,
-      ['elie24saab@gmail.com'],
+      [self.Email],
       fail_silently=False)
     
    super(Student, self).save(*args, **kwargs)
