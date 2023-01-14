@@ -107,6 +107,8 @@ class Publication(models.Model):
   Publication = models.TextField(null=True)
   PDF = models.FileField(null=True)
   Category = models.ForeignKey('PublicationCategories', on_delete=models.CASCADE, null=True)
+  def __str__(self):
+    return f" {self.Category} Publicaton"
 
 
 class PublicationCategories(models.Model):
@@ -114,3 +116,5 @@ class PublicationCategories(models.Model):
   class Meta:
     verbose_name = u'Publication Category'
     verbose_name_plural = u'Publication Categories'
+  def __str__(self):
+   return f" {self.Title}"

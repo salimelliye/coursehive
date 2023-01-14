@@ -111,7 +111,7 @@
           <tbody>
             <tr>
               {% for item in material %}
-              <td data-label="Date">{{item.Lecture.Date}}</td>
+              <td data-label="Date" style="font-weight:bold;">{{item.Lecture.Date}}</td>
               <td data-label="Topic">{{item.Lecture.ShortDescription}}</td>
               {% if item.Solution %} <td data-label="Solution Keys"><a href="{{item.Solution.url}}" style="color:black;" target="_blank">Lecture {{item.Lecture.Title}}'s Solution Key <i class="fa fa-angle-double-right" style="color:#006e58;"></i> </a></td>
               {% else %} <td data-label="Solution Keys"><a style="color:black;" target="_blank"></td> {% endif %}

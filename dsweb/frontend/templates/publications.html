@@ -72,21 +72,19 @@
  
       <section style="background-size: cover;  ">
         <div class="container" style="background-size: cover; padding-left: 15px;">
-            <h2 class="biographytitle" style="padding-left:0px;">International Journals</h2>
+           {% for cat in category %}
+            <h2 class="biographytitle" style="padding-left:0px;">{{cat.Title}}</h2>
             <main>
               <ol class="gradient-list">
-                <li>N. Abbas, S. Sharafeddine, A. Mourad, C. Abou-Rjeily, and W. Fawaz, «Joint computing, communication and cost-aware task offloading in D2D-enabled Het-MEC», 
-                </li>
-                <li>N. Abbas, S. Sharafeddine, A. Mourad, C. Abou-Rjeily, and W. Fawaz, «Joint computing, communication and cost-aware task offloading in D2D-enabled Het-MEC», Elsevier Journal of Computer Networks, accepted in March 2022.
-                </li>
-                <li>N. Abbas, S. Sharafeddine, A. Mourad, C. Abou-Rjeily, and W. Fawaz, «Joint computing, communication and cost-aware task offloading in D2D-enabled Het-MEC», Elsevier Journal of Computer Networks, accepted in March 2022.
-                </li>
-                <li>N. Abbas, S. Sharafeddine, A. Mourad, C. Abou-Rjeily, and W. Fawaz, «Joint computing, communication and cost-aware task offloading in D2D-enabled Het-MEC», Elsevier Journal of Computer Networks, accepted in March 2022.
-                </li>
-                <li>N. Abbas, S. Sharafeddine, A. Mourad, C. Abou-Rjeily, and W. Fawaz, «Joint computing, communication and cost-aware task offloading in D2D-enabled Het-MEC», Elsevier Journal of Computer Networks, accepted in March 2022.
-                </li>
+                {% for pub in publication %}
+                {%if pub.Category == cat %}
+                <li>{{pub.Publication}}</li>
+                {% else %}
+                {% endif %}
+                {% endfor %}
               </ol>
             </main>
+            {% endfor %}
      </div>
      </section>
 
