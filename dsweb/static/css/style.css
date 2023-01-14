@@ -822,12 +822,13 @@ footer {
 }
 
 table {
-  border: 1px solid #ccc;
+  border: 2px solid rgba(3, 79, 61, 0.7);
   border-collapse: collapse;
   margin: 0;
   padding: 0;
   width: 100%;
   table-layout: fixed;
+  box-shadow: 0px 5px 10px 0px rgb(0 0 0 / 30%);
 }
 
 table caption {
@@ -841,6 +842,12 @@ table tr {
   padding: .35em;
 }
 
+tr:nth-child(even) {
+
+  background-color: #f2f2f2;
+  
+  }
+
 table th,
 table td {
   padding: 1.25em;
@@ -848,7 +855,7 @@ table td {
 }
 
 table th {
-  font-size: .85em;
+  font-size: .95em;
   letter-spacing: .1em;
   text-transform: uppercase;
 }
